@@ -145,7 +145,7 @@ phina.define("MySymbolClass", {
   // 初期化
   init: function() {
     xym = require("/node_modules/symbol-sdk");
-    const node = 'http://sym-test-01.opening-line.jp:3000';
+    const node = 'https://sym-test-01.opening-line.jp:3001';
     const repo = new xym.RepositoryFactoryHttp(node,xym.NetworkType.TEST_NET);
     const restrictionRepo = repo.createRestrictionAccountRepository();
     const transactionHttp = repo.createTransactionRepository();
