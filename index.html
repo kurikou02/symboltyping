@@ -675,6 +675,14 @@ phina.define('TitleScene', {
       //console.log('モザイク回収！');
       //symbol.mosaicRevokable(symbol.demoUserAddress);
     }
+   
+    // スマホからのアクセスならごめんなさい表示
+    if( this.isSmartPhone() ){
+      Swal.fire({
+        title: 'Sorry!',
+        text: 'This game is only supported on PC.'
+      });
+    }
     
   },
   
@@ -795,7 +803,18 @@ phina.define('TitleScene', {
               break;
           }
       }
+  },
+ 
+  // スマホアクセスの判定
+  isSmartPhone: function() {
+    // UserAgentからのスマホ判定
+    if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+      return true;
+    } else {
+      return false;
+    }
   }
+
 
 });
 
